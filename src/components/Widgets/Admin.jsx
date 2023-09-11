@@ -8,6 +8,8 @@ import "../../assets/styles/PostNewNoteModal.css";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Input from "./Input";
+import Textarea from "./Textarea";
 const Admin = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
@@ -142,51 +144,46 @@ const Admin = () => {
           />
         </div>
         <div className="col-md-8 field-wrapper">
-          <div className="form-item text-end">
-            <label htmlFor="">نام کاربری</label>
-            <Field
-              name="UserName"
-              as="textarea"
-              placeholder="نام کاربری خود را وارد کنید ..."
-              defaultValue={usersData.UserName}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">بیوگرافی</label>
-            <Field
-              name="UserBio"
-              as="textarea"
-              placeholder=" بیوگرافی کوتاهی از خود وارد کنید ..."
-              defaultValue={usersData.UserBio}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">لینک اینستاگرام</label>
-            <Field
-              name="instagramLink"
-              as="textarea"
-              placeholder="لینک اینستاگرام خود را وارد کنید ..."
-              defaultValue={usersData.instagramLink}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">لینک توئیتر</label>
-            <Field
-              name="TwitterLink"
-              as="textarea"
-              placeholder="لینک توئیتر خود را وارد کنید ..."
-              defaultValue={usersData.TwitterLink}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">لینک فیسبوک</label>
-            <Field
-              name="FaceBookLink"
-              as="textarea"
-              placeholder="لینک فیسبوک خود را وارد کنید ..."
-              defaultValue={usersData.FaceBookLink}
-            />
-          </div>
+          <Textarea
+            addClass={" text-end"}
+            name={"UserName"}
+            placeholder={"نام کاربری خود را وارد کنید ..."}
+            type={"textarea"}
+            defaultValue={usersData.UserName}
+            label={"نام کاربری"}
+          />
+          <Textarea
+            addClass={" text-end"}
+            name={"UserBio"}
+            placeholder={" بیوگرافی کوتاهی از خود وارد کنید ..."}
+            type={"textarea"}
+            defaultValue={usersData.UserBio}
+            label={"بیوگرافی"}
+          />
+          <Textarea
+            addClass={" text-end"}
+            name={"instagramLink"}
+            placeholder={"لینک اینستاگرام خود را وارد کنید ..."}
+            type={"textarea"}
+            defaultValue={usersData.instagramLink}
+            label={"لینک اینستاگرام"}
+          />
+          <Textarea
+            addClass={" text-end"}
+            name={"TwitterLink"}
+            placeholder={"لینک توئیتر خود را وارد کنید ..."}
+            type={"textarea"}
+            defaultValue={usersData.TwitterLink}
+            label={"لینک توئیتر"}
+          />
+          <Textarea
+            addClass={" text-end"}
+            name={"FaceBookLink"}
+            placeholder={"لینک فیسبوک خود را وارد کنید ..."}
+            type={"textarea"}
+            defaultValue={usersData.FaceBookLink}
+            label={"لینک فیسبوک"}
+          />
         </div>
         <input type="submit" />
       </Form>

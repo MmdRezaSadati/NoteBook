@@ -9,6 +9,8 @@ import "../assets/styles/EditCourse.css";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Input from "../components/Widgets/Input";
+import Textarea from "../components/Widgets/Textarea";
 const EditNote = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
@@ -29,7 +31,7 @@ const EditNote = () => {
       console.log(error);
     }
 
-    console.log(result.data);
+    // console.log(result.data);
     setPostData(result.data);
   };
   useEffect(() => {
@@ -49,7 +51,7 @@ const EditNote = () => {
       PostCategory: values.PostCategory,
       startCourse: values.startCourse,
     };
-    const alertMes = toast.info('... اطلاعات دوره آپدیت شد لطفا صبر کنید', {
+    const alertMes = toast.info("... اطلاعات دوره آپدیت شد لطفا صبر کنید", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -58,7 +60,7 @@ const EditNote = () => {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+    });
     alertMes;
     try {
       await axios.put(
@@ -148,51 +150,46 @@ const EditNote = () => {
           />
         </div>
         <div className="col-md-8 field-wrapper">
-          <div className="form-item text-end">
-            <label htmlFor="">نام دوره</label>
-            <Field
-              name="PostName"
-              as="textarea"
-              placeholder="نام دوره :"
-              defaultValue={postData.PostName}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">قیمت دوره </label>
-            <Field
-              name="coursePrice"
-              as="textarea"
-              placeholder="قیمت دوره :"
-              defaultValue={postData.coursePrice}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">توضیحات دوره </label>
-            <Field
-              name="PostDescription"
-              as="textarea"
-              placeholder="توضیحات دوره :"
-              defaultValue={postData.PostDescription}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">زمان شروع دوره </label>
-            <Field
-              name="startCourse"
-              as="textarea"
-              placeholder="زمان شروع دوره : YYYY,MM,DD"
-              defaultValue={postData.startCourse}
-            />
-          </div>
-          <div className="form-item text-end">
-            <label htmlFor="">دسته بندی</label>
-            <Field
-              name="PostCategory"
-              as="textarea"
-              placeholder=" دسته بندی دوره را وارد کنید ..."
-              defaultValue={postData.PostCategory}
-            />
-          </div>
+          <Textarea
+            addClass={"text-end"}
+            name={"PostName"}
+            placeholder={"نام دوره"}
+            type={"textarea"}
+            defaultValue={postData.PostName}
+            label={"توضیحات دوره :"}
+          />
+          <Textarea
+            addClass={"text-end"}
+            name={"coursePrice"}
+            placeholder={"قیمت دوره"}
+            type={"textarea"}
+            defaultValue={postData.coursePrice}
+            label={"قیمت دوره :"}
+          />
+          <Textarea
+            addClass={"text-end"}
+            name={"PostDescription"}
+            placeholder={"توضیحات دوره"}
+            type={"textarea"}
+            defaultValue={postData.PostDescription}
+            label={"توضیحات دوره :"}
+          />
+          <Textarea
+            addClass={"text-end"}
+            name={"startCourse"}
+            placeholder={"زمان شروع دوره "}
+            type={"textarea"}
+            defaultValue={postData.startCourse}
+            label={"زمان شروع دوره : YYYY,MM,DD"}
+          />
+          <Textarea
+            addClass={"text-end"}
+            name={"PostCategory"}
+            placeholder={"دسته بندی "}
+            type={"textarea"}
+            defaultValue={postData.PostCategory}
+            label={" دسته بندی دوره را وارد کنید ..."}
+          />
         </div>
         <input type="submit" />
       </Form>

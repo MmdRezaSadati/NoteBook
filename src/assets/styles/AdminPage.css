@@ -25,6 +25,7 @@
   height: 100%;
 }
  .AdminPage ul a{color: #000;}
+ .AdminPage ul a:first-child:hover{color: transparent !important;}
  .AdminPage ul a:hover{color: #fff;}
  .AdminPage ul a.active  {
   color: #fff;

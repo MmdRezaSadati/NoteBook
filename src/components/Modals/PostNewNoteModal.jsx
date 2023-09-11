@@ -5,8 +5,9 @@ import * as yup from "yup";
 import { Link } from "react-router-dom";
 import uploadIcon from "../../assets/images/UploadImage.svg";
 import axios from "axios";
-  import { ToastContainer, toast } from "react-toastify";
-  import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Input from "../Widgets/Input";
 const PostNewNoteModal = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
@@ -129,39 +130,24 @@ const PostNewNoteModal = () => {
               validationSchema={validation}
             >
               <Form className="new-post-form">
-                <div className="form-item half-item">
-                  <Field name="PostName" placeholder="نام دوره :" />
-                  <ErrorMessage
-                    name="PostName"
-                    className="error"
-                    component={"span"}
-                  />
-                </div>
-                <div className="form-item half-item">
-                  <Field
-                    name="coursePrice"
-                    placeholder="قیمت دوره :"
-                    type="number"
-                  />
-                  <ErrorMessage
-                    name="coursePrice"
-                    className="error"
-                    component={"span"}
-                  />
-                </div>
-                <div className="form-item">
-                  <Field
-                    name="PostDescription"
-                    as="textarea"
-                    // style={{width: "100%"}}
-                    placeholder="توضیحات دوره :"
-                  />
-                  <ErrorMessage
-                    name="PostDescription"
-                    className="error"
-                    component={"span"}
-                  />
-                </div>
+                <Input
+                  addClass={"half-item text-end"}
+                  name={"PostName"}
+                  placeholder={"نام دوره :"}
+                  label={"نام دوره :"}
+                />
+                <Input
+                  addClass={"half-item text-end"}
+                  name={"coursePrice"}
+                  placeholder={"قیمت دوره :"}
+                  label={"قیمت دوره :"}
+                />
+                <Input
+                  addClass={"half-item text-end"}
+                  name={"PostDescription"}
+                  placeholder={"توضیحات دوره :"}
+                  label={"توضیحات دوره :"}
+                />
                 <div className="form-item">
                   <label
                     htmlFor="imageUploaderInput"
@@ -197,26 +183,18 @@ const PostNewNoteModal = () => {
                     component={"span"}
                   />
                 </div>
-                <div className="form-item half-item">
-                  <Field
-                    name="startCourse"
-                    placeholder="زمان شروع دوره : YYYY,MM,DD"
-                  />
-                  <ErrorMessage
-                    name="startCourse"
-                    className="error"
-                    component={"span"}
-                  />
-                </div>
-                <div className="form-item half-item">
-                  <Field name="PostCategory" placeholder="دسته بندی دوره :" />
-                  <ErrorMessage
-                    name="PostCategory"
-                    className="error"
-                    component={"span"}
-                  />
-                </div>
-
+                <Input
+                  addClass={"half-item text-end"}
+                  name={"startCourse"}
+                  placeholder={"زمان شروع دوره : YYYY,MM,DD"}
+                  label={"زمان شروع دوره : "}
+                />
+                <Input
+                  addClass={"half-item text-end"}
+                  name={"PostCategory"}
+                  placeholder={"دسته بندی دوره :"}
+                  label={"دسته بندی دوره :"}
+                />
                 <input type="submit" value="شروع دوره جدید !" />
               </Form>
             </Formik>
