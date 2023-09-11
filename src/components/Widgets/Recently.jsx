@@ -13,7 +13,7 @@ const Recently = ({ postsData }) => {
         {postsData.map((data) => (
           <Link
             to={"/note/" + data.id}
-            className="RecentlyPosts col-lg-12 row my-4"
+            className="RecentlyPosts col-lg-12 text-center text-lg-end row my-4"
           >
             <RecentlyPost postData={data} />
           </Link>

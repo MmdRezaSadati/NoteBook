@@ -11,11 +11,11 @@ const PostNewNoteModal = () => {
   const submitForm = async (values) => {
     const check = document.querySelector(".PostNewNoteModal > a");
     const object = {
-      PostName: values.PostName,
+    PostName: values.PostName,
       PostDescription: values.PostDescription,
       coursePrice: values.coursePrice,
       PostImage: imageUrl,
-      AuthorName: "Mohammad Reza",
+      AuthorName: "محمدرضا ساداتی",
       AuthorsImage: "http://res.cloudinary.com/df9w7u89a/image/upload/v1694343361/ya56v4b67vzezcyymbgz.jpg",
       PostCategory: values.PostCategory,
       startCourse: values.startCourse,

@@ -9,7 +9,10 @@
   justify-content: space-evenly;
   gap: 0 30px;
 }
-
+.PostNewNoteModal i{
+  font-size: 32px;
+  color: red !important;
+}
 .form-item.half-item {
   width: 45%;
   flex-grow: 1;

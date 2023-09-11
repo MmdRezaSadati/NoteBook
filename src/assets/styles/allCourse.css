@@ -2,3 +2,17 @@
     width: 366px;
     height: 200px;
 }
+.allCourse-post{
+    position: relative;
+}
+.allCourse-post .bi-trash:hover{
+    color: red;
+}
+.allCourse-post .bi-trash{
+    top: 60%;
+    transition: .15s;
+    font-size: 32px;
+    left: 10%;
+    position: absolute;
+    z-index: 10;
+}
