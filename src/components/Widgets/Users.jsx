@@ -7,10 +7,18 @@ const Users = () => {
   let [usersData, setUsersData] = useState([]);
 
   const getUsersData = async () => {
-    const result = await axios.get(
-      "https://64f302a7edfa0459f6c63503.mockapi.io/Users/"
-    );
-    setUsersData(result.data);
+    try {
+      const result = await axios.get(
+        "https://64f302a7edfa0459f6c63503.mockapi.io/Users/"
+      );
+      try {
+        setUsersData(result.data);
+      } catch (error) {
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     getUsersData();

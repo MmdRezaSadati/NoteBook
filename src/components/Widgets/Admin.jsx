@@ -6,6 +6,8 @@ import { Fragment } from "react";
 import "../../assets/styles/Admin.css";
 import "../../assets/styles/PostNewNoteModal.css";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Admin = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
@@ -13,10 +15,18 @@ const Admin = () => {
   const Navigate = useNavigate();
   let [usersData, setUsersData] = useState([]);
   const getUsersData = async () => {
-    const result = await axios.get(
-      "https://64f302a7edfa0459f6c63503.mockapi.io/Users/"+urlParam.id
-    );
-    setUsersData(result.data);
+    try {
+      const result = await axios.get(
+        "https://64f302a7edfa0459f6c63503.mockapi.io/Users/" + urlParam.id
+      );
+      try {
+        setUsersData(result.data);
+      } catch (error) {
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     getUsersData();
@@ -32,9 +42,20 @@ const Admin = () => {
       TwitterLink: values.TwitterLink,
       FaceBookLink: values.FaceBookLink,
     };
+    const alertMes = toast.info("... اطلاعات کاربر آپدیت شد لطفا صبر کنید", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    alertMes;
     try {
       await axios.put(
-        "https://64f302a7edfa0459f6c63503.mockapi.io//Users/"+urlParam.id,
+        "https://64f302a7edfa0459f6c63503.mockapi.io//Users/" + urlParam.id,
         object
       );
       try {
@@ -77,6 +98,19 @@ const Admin = () => {
       onSubmit={(values) => submitForm(values)}
     >
       <Form className="row Admin">
+        <ToastContainer
+          position="top-right"
+          autoClose={10000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={true}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        <ToastContainer />
         <h2>ویرایش اطلاعات ادمین</h2>
         <div className="col-md-4 uploadAvatar">
           <label htmlFor="UserAvatar">
@@ -118,7 +152,7 @@ const Admin = () => {
             />
           </div>
           <div className="form-item text-end">
-          <label htmlFor="">بیوگرافی</label>
+            <label htmlFor="">بیوگرافی</label>
             <Field
               name="UserBio"
               as="textarea"
@@ -127,7 +161,7 @@ const Admin = () => {
             />
           </div>
           <div className="form-item text-end">
-          <label htmlFor="">لینک اینستاگرام</label>
+            <label htmlFor="">لینک اینستاگرام</label>
             <Field
               name="instagramLink"
               as="textarea"
@@ -136,7 +170,7 @@ const Admin = () => {
             />
           </div>
           <div className="form-item text-end">
-          <label htmlFor="">لینک توئیتر</label>
+            <label htmlFor="">لینک توئیتر</label>
             <Field
               name="TwitterLink"
               as="textarea"
@@ -145,7 +179,7 @@ const Admin = () => {
             />
           </div>
           <div className="form-item text-end">
-          <label htmlFor="">لینک فیسبوک</label>
+            <label htmlFor="">لینک فیسبوک</label>
             <Field
               name="FaceBookLink"
               as="textarea"

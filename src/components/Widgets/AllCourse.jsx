@@ -27,10 +27,18 @@ const AllCourse = () => {
 
   let [postsData, setPostsData] = useState([]);
   const getPostsData = async () => {
-    let results = await axios.get(
-      "https://64f302a7edfa0459f6c63503.mockapi.io/Posts"
-    );
-    setPostsData(results.data);
+    try {
+      let results = await axios.get(
+        "https://64f302a7edfa0459f6c63503.mockapi.io/Posts"
+      );
+      try {
+        setPostsData(results.data);
+      } catch (error) {
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div>
@@ -38,7 +46,6 @@ const AllCourse = () => {
       <div className="column px-3 allCourse-state">
         {postsData.map((data) => (
           <div className="allCourse-post">
-            
             <i className="bi bi-trash" onClick={() => deletePost(data)}></i>
             <Link
               key={data.id}

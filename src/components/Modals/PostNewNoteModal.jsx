@@ -5,22 +5,35 @@ import * as yup from "yup";
 import { Link } from "react-router-dom";
 import uploadIcon from "../../assets/images/UploadImage.svg";
 import axios from "axios";
+  import { ToastContainer, toast } from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
 const PostNewNoteModal = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
   const submitForm = async (values) => {
     const check = document.querySelector(".PostNewNoteModal > a");
     const object = {
-    PostName: values.PostName,
+      PostName: values.PostName,
       PostDescription: values.PostDescription,
       coursePrice: values.coursePrice,
       PostImage: imageUrl,
       AuthorName: "محمدرضا ساداتی",
-      AuthorsImage: "http://res.cloudinary.com/df9w7u89a/image/upload/v1694343361/ya56v4b67vzezcyymbgz.jpg",
+      AuthorsImage:
+        "http://res.cloudinary.com/df9w7u89a/image/upload/v1694343361/ya56v4b67vzezcyymbgz.jpg",
       PostCategory: values.PostCategory,
       startCourse: values.startCourse,
     };
     console.log(object.PostImage);
+    toast.success("... دوره جدید افزوده شد لطفا منتظر بمانید", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     try {
       await axios.post(
         "https://64f302a7edfa0459f6c63503.mockapi.io/Posts",
@@ -73,7 +86,7 @@ const PostNewNoteModal = () => {
     PostDescription: yup
       .string()
       .required("Post Description is required bro!!"),
-      coursePrice: yup.number().required("course Price is required bro!!"),
+    coursePrice: yup.number().required("course Price is required bro!!"),
     PostCategory: yup.string().required("Post Category is required bro!!"),
     startCourse: yup.string().required("start Course is required bro!!"),
   });
@@ -81,6 +94,21 @@ const PostNewNoteModal = () => {
   return (
     <Fragment>
       <div className="Modal" dir="rtl">
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        {/* Same as */}
+        <ToastContainer />
+
         <Link className="Modal-bg" to={"/"}></Link>
         <div className="PostNewNoteModal">
           <Link to="/">
@@ -170,7 +198,10 @@ const PostNewNoteModal = () => {
                   />
                 </div>
                 <div className="form-item half-item">
-                  <Field name="startCourse" placeholder="زمان شروع دوره : YYYY,MM,DD" />
+                  <Field
+                    name="startCourse"
+                    placeholder="زمان شروع دوره : YYYY,MM,DD"
+                  />
                   <ErrorMessage
                     name="startCourse"
                     className="error"

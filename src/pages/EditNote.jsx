@@ -7,6 +7,8 @@ import "../assets/styles/Admin.css";
 import "../assets/styles/PostNewNoteModal.css";
 import "../assets/styles/EditCourse.css";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const EditNote = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
@@ -14,9 +16,19 @@ const EditNote = () => {
   const Navigate = useNavigate();
   let [postData, setPostData] = useState([]);
   const getpostData = async () => {
-    const result = await axios.get(
-      "https://64f302a7edfa0459f6c63503.mockapi.io/Posts/" + urlParam.id
-    );
+    try {
+      const result = await axios.get(
+        "https://64f302a7edfa0459f6c63503.mockapi.io/Posts/" + urlParam.id
+      );
+      try {
+        setPostData(result.data);
+      } catch (error) {
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
     console.log(result.data);
     setPostData(result.data);
   };
@@ -37,6 +49,17 @@ const EditNote = () => {
       PostCategory: values.PostCategory,
       startCourse: values.startCourse,
     };
+    const alertMes = toast.info('... اطلاعات دوره آپدیت شد لطفا صبر کنید', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+    alertMes;
     try {
       await axios.put(
         "https://64f302a7edfa0459f6c63503.mockapi.io/Posts/" + urlParam.id,
@@ -81,11 +104,30 @@ const EditNote = () => {
       onSubmit={(values) => submitForm(values)}
     >
       <Form className="row Admin edit-course">
+        <ToastContainer
+          position="top-right"
+          autoClose={10000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={true}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        <ToastContainer />
         <h2>ویرایش اطلاعات ادمین</h2>
         <div className="col-md-4 uploadAvatar">
           <label htmlFor="UserAvatar">
             <img
-              src={imageUrl ? imageUrl : postData.PostImage ? postData.PostImage : AccountIcon}
+              src={
+                imageUrl
+                  ? imageUrl
+                  : postData.PostImage
+                  ? postData.PostImage
+                  : AccountIcon
+              }
               alt="Upload User Avatar"
             />
             <div className="cameraIcon">
@@ -93,7 +135,7 @@ const EditNote = () => {
             </div>
           </label>
           <button type="button" onClick={uploadImage}>
-            Upload Avatar
+            Upload Course Image
           </button>
           <Field
             name="UserAvatar"

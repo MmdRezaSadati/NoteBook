@@ -3,15 +3,6 @@ import axios from "axios";
 import FeaturedPosts from "./FeaturedPosts";
 
 const Featured = ({postsData}) => {
-
-  // const getPostsData = async () => {
-  //   const result = await axios.get("https://64f302a7edfa0459f6c63503.mockapi.io/Posts");
-  //   setPostsData(result.data)
-  //   console.log(postsData.data)
-  // };
-  // useEffect(() => {
-  //   getPostsData();
-  // },[]);
   return (
     <div className="col-md-7">
       <h2>
