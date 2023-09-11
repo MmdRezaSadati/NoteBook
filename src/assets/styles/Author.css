@@ -1,0 +1,36 @@
+.AuthorsState img {
+  width: 80px;
+  padding: 0;
+  height: 80px;
+  border-radius: 50%;
+  background: #caa8dd;
+}
+.socialIconsLink a svg {
+  fill: #999999;
+  transition: 0.15s;
+  width: 12px;
+  height: 12px;
+}
+.socialIconsLink a {
+  margin: 0 5px;
+  border: 1px solid #999999;
+  padding: 0;
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.socialIconsLink a:hover {
+  border: 1px solid #00aaa1;
+  background-color: #00aaa1;
+}
+.socialIconsLink a:hover svg {
+  fill: #fff !important;  
+}
+.socialIconsLink a:hover {
+  fill: #fff;
+  color: #fff;
+}

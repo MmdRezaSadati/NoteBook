@@ -1,0 +1,17 @@
+@font-face {
+  font-family: irSans;
+  src: url("../fonts/IRANSansWeb.ttf");
+}
+@font-face {
+  font-family: Roya;
+  src: url("../fonts/Roya.ttf");
+}
+.numberFont {
+  font-size: 19px;
+  font-family: Roya !important;
+}
+.irsansFont{
+  font-size: 16px;
+  font-family: irSans;
+    
+}

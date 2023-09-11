@@ -1,0 +1,84 @@
+.FeaturedPost-state ,.PopularState{
+  height: 375px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.FeaturedPost-state::-webkit-scrollbar{
+  width: 1.5px;
+}
+.FeaturedPosts{
+  margin: 10px 0;
+}
+/* Track */
+.FeaturedPost-state::-webkit-scrollbar-track {
+  background: #C4C4C4;
+}
+
+/* Handle */
+.FeaturedPost-state::-webkit-scrollbar-thumb{
+  background: #00AAA1;
+  position: absolute;
+  border-radius: 8px;
+  outline: 2px solid #00AAA1;
+}
+.category-lbl {
+  background-color: #dff1f0;
+  color: #666;
+  width: auto;
+  padding: 4px 8px;
+  transition: .15s;
+  margin: 0 0 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.category-lbl:hover {
+  background-color: #00AAA1;
+  color: #fff;
+}
+
+.FeaturedPosts > img {
+  width: 100%;
+  height: 170px;
+  /* border: 1px solid transparent; */
+  border-radius: 8px;
+  background-color: #caa8dd;
+}
+.account img{
+  width: 28px;
+  margin: 0 5px;
+  border-radius: 50%;
+  height: 28px;
+}
+.FeaturedPosts .row{
+  color: #777;
+  flex-wrap: nowrap !important;
+  margin: 24px 0;
+  align-items: center;
+}
+span.account{border: 0 none !important;}
+.FeaturedPosts .row span{
+  width: auto;
+  font-size: 12px;
+  overflow: hidden;
+  padding: 0 4px;
+  border-right:1px solid #999;
+}
+.FeaturedPosts p{
+  color: #555555;
+}
+.FeaturedPosts h3 , .FeaturedPosts h4{
+  color: #444;
+  transition: .15s;
+}
+
+.FeaturedPosts h3:hover , .FeaturedPosts h4:hover{
+  color: #000;
+}
+
+.PopularState::-webkit-scrollbar{
+  width: 0;
+}
+.PopularState h4{
+  font-weight: 400;
+}

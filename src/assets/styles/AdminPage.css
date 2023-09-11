@@ -1,0 +1,50 @@
+.AdminPage {
+  background-color: rgb(12, 0, 50);
+  justify-content: center;
+  gap: 15px;
+  height: 100%;
+}
+.AdminPage ul a {
+  font-size: 18px;
+  transition: .2s;
+}
+.AdminPage ul a:first-child:hover li{background-color: #fff !important;}
+.AdminPage ul li:hover{
+  background: rgb(12 0 50 / 45%);
+}
+.AdminPage .col-md-2 ul a{
+  width: 100%;
+  margin: 5px 0;
+  transition: .2s;
+}
+.AdminPage .col-md-2  ul li {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  height: 100%;
+}
+ .AdminPage ul a{color: #000;}
+ .AdminPage ul a:hover{color: #fff;}
+ .AdminPage ul a.active  {
+  color: #fff;
+}
+ .AdminPage ul a.active li{
+  background: rgb(12 0 50 / 65%) !important ;
+ }
+.AdminPage ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.AdminPage .logo {
+  width: 150px; 
+  margin: 10px 25px 30px 0;
+  display: block;
+}
+.AdminPage > div {
+  background-color: aliceblue;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 10px;
+}

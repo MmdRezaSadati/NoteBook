@@ -1,0 +1,12 @@
+.have-bg{
+    background-color: #F2F8F7;
+}
+h2 strong{
+    background-color: #00AAA1;
+    padding: 0 4px;
+    color: #fff;
+}
+h2{
+    margin:20px 0 60px;
+}
+.pointer{cursor: pointer;}

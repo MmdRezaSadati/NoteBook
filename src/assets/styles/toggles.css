@@ -1,0 +1,45 @@
+.togglePlace{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    padding: 5px 10px;
+}
+.togglePlace i {
+    z-index: 5;
+    color: #00AAA1;
+}
+.togglePlace i.active{
+    color:#fff;
+}
+.toggle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block !important;
+    background-color: #F1F1F1;
+    appearance: none;
+  }
+  .toggle::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 50%;
+    border-radius: 8px;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 50%;
+    background-color: #00AAA1;
+    border: 5px solid ;
+    border-color: #00AAA1;
+    transition: all 0.3s;
+  }
+  .toggle.active::before {
+    left: 50%;
+    border-color: #00AAA1;
+  }

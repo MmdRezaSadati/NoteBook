@@ -1,0 +1,45 @@
+.uploadAvatar label {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.uploadAvatar label img {
+  width: 100%;
+}
+.uploadAvatar label:hover .cameraIcon {
+  visibility: visible;
+
+  background-color: #0008;
+}
+.uploadAvatar .cameraIcon:hover {
+  visibility: visible;
+  opacity: 1;
+}
+.uploadAvatar .cameraIcon i:hover {
+  color: #fff;
+}
+.uploadAvatar .cameraIcon {
+  font-size: 32px;
+  width: 100%;
+  transition: .2s;
+  color: #fff;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  background-color: #0008;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.uploadAvatar input {
+  display: none;
+}
+.Admin{
+    justify-content: center;
+    align-items: center;
+}

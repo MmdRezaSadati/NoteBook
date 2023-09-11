@@ -1,0 +1,48 @@
+
+.RecentlyPosts {
+  box-shadow: 0 25px 0 #0000;
+  padding: 10px 5px;
+  transition: .25s all;
+  border-radius: 12px;
+}
+.RecentlyPosts:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px #0005;
+}
+
+
+.RecentlyPosts > .col-lg-5 img {
+  height: 180px;
+  width: 266px;
+  border-radius: 6px;
+  background-color: #caa8dd;
+}
+.RecentlyPosts .row span {
+  width: auto;
+  font-size: 12px;
+  overflow: hidden;
+  padding: 0 4px;
+  border-right: 1px solid #999;
+}
+.RecentlyPosts p {
+  color: #555;
+}
+.RecentlyPosts h3 {
+  color: #555;
+}
+
+.RecentlyPosts h3{
+  color: #444;
+  transition: .15s;
+}
+
+.RecentlyPosts h3:hover{
+  color: #000;
+}
+
+.RecentlyPosts .row .row {
+    color: #777;
+    flex-wrap: nowrap !important;
+    margin: 24px 0;
+    align-items: center;
+}

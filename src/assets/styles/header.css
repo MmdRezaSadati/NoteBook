@@ -1,0 +1,23 @@
+header{
+    color: #333;
+    background: rgb(232, 243, 243);
+    transition: .15s linear;
+    filter: drop-shadow(0px 4px 4px rgba(75, 97, 97, 0.25));
+}
+.headerMenu , .headerButtons {
+    list-style: none;
+}
+.bi ,
+header li{
+    cursor: pointer;
+}
+.headerMenu li ,li a{
+    transition: .15s;
+    color: #333;
+}
+.bi:hover , header li:hover, header li a:hover{
+    color: #00AAA1;
+}
+.Logo{
+    width: 180px;
+}

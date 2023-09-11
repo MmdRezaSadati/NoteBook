@@ -1,0 +1,29 @@
+.AppBody.dark {
+  background-color: #dedede;
+}
+.AppBody.dark header {
+  background-color: #b0c1c1;
+}
+
+.AppBody.dark .FeaturedPosts > img,
+.AppBody.dark .RecentlyPosts > .col-lg-5 img,
+.AppBody.dark .AuthorsState img {
+  background-color: #3a0857;
+}
+.AppBody.dark .have-bg {
+  background-color: #cdd2d1;
+}
+
+.AppBody.dark h2 strong {
+  background-color: #00aaa1;
+  color: #fff;
+}
+
+.AppBody.dark .FeaturedPosts .row {
+  color: #333;
+}
+
+
+.AppBody.dark .socialIconsLink a svg {
+    fill: #7e7e7e;
+}
