@@ -9,7 +9,7 @@ const PopularPost = ({postData}) => {
       <div className="row">
         <span className='account'><img src={postData.AuthorsImage} alt=''/>{postData.AuthorName}</span>
         <span className='numberFont'>{postData.startCourse}</span>
-        <span>{postData.ReadTime} دقیقه</span>
+        <span>{postData.coursePrice} تومان</span>
       </div>
       <p>{postData.PostDescription}</p>
     </Link>

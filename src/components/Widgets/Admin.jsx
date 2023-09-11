@@ -5,15 +5,16 @@ import AccountIcon from "../../assets/images/icons/account.png";
 import { Fragment } from "react";
 import "../../assets/styles/Admin.css";
 import "../../assets/styles/PostNewNoteModal.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 const Admin = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
+  const [urlParam, setUrlParam] = useState(useParams());
   const Navigate = useNavigate();
   let [usersData, setUsersData] = useState([]);
   const getUsersData = async () => {
     const result = await axios.get(
-      "https://64f302a7edfa0459f6c63503.mockapi.io/Users/1"
+      "https://64f302a7edfa0459f6c63503.mockapi.io/Users/"+urlParam.id
     );
     setUsersData(result.data);
   };
@@ -33,7 +34,7 @@ const Admin = () => {
     };
     try {
       await axios.put(
-        "https://64f302a7edfa0459f6c63503.mockapi.io//Users/1",
+        "https://64f302a7edfa0459f6c63503.mockapi.io//Users/"+urlParam.id,
         object
       );
       try {

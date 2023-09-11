@@ -80,7 +80,7 @@ const PostNewNoteModal = () => {
 
   return (
     <Fragment>
-      <div className="Modal">
+      <div className="Modal" dir="rtl">
         <Link className="Modal-bg" to={"/"}></Link>
         <div className="PostNewNoteModal">
           <Link to="/">
@@ -102,7 +102,7 @@ const PostNewNoteModal = () => {
             >
               <Form className="new-post-form">
                 <div className="form-item half-item">
-                  <Field name="PostName" placeholder="Post Name :" />
+                  <Field name="PostName" placeholder="نام دوره :" />
                   <ErrorMessage
                     name="PostName"
                     className="error"
@@ -112,7 +112,7 @@ const PostNewNoteModal = () => {
                 <div className="form-item half-item">
                   <Field
                     name="coursePrice"
-                    placeholder="course Price :"
+                    placeholder="قیمت دوره :"
                     type="number"
                   />
                   <ErrorMessage
@@ -126,7 +126,7 @@ const PostNewNoteModal = () => {
                     name="PostDescription"
                     as="textarea"
                     // style={{width: "100%"}}
-                    placeholder="Post Description :"
+                    placeholder="توضیحات دوره :"
                   />
                   <ErrorMessage
                     name="PostDescription"
@@ -170,7 +170,7 @@ const PostNewNoteModal = () => {
                   />
                 </div>
                 <div className="form-item half-item">
-                  <Field name="startCourse" placeholder="start Course : YYYY,MM,DD" />
+                  <Field name="startCourse" placeholder="زمان شروع دوره : YYYY,MM,DD" />
                   <ErrorMessage
                     name="startCourse"
                     className="error"
@@ -178,7 +178,7 @@ const PostNewNoteModal = () => {
                   />
                 </div>
                 <div className="form-item half-item">
-                  <Field name="PostCategory" placeholder="Post Category :" />
+                  <Field name="PostCategory" placeholder="دسته بندی دوره :" />
                   <ErrorMessage
                     name="PostCategory"
                     className="error"
@@ -186,7 +186,7 @@ const PostNewNoteModal = () => {
                   />
                 </div>
 
-                <input type="submit" value="Post New Note!" />
+                <input type="submit" value="شروع دوره جدید !" />
               </Form>
             </Formik>
           </div>

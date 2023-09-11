@@ -5,8 +5,9 @@
   transition: .25s all;
   border-radius: 12px;
 }
-.RecentlyPosts:hover {
+.recentlyState .RecentlyPosts:hover {
   transform: translateY(-10px);
+  background: #0001;
   box-shadow: 0 5px 15px #0005;
 }
 

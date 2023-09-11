@@ -49,7 +49,7 @@ function App() {
           children: [
             {
               path: "/addNewNote",
-              element: <PostNewNoteModal/>,
+              element: <PostNewNoteModal />,
             },
           ],
         },
@@ -63,26 +63,25 @@ function App() {
             },
           ],
         },
-        
       ],
     },
     {
       path: "/admin/",
-      element:  <AdminPage/>,
+      element: <AdminPage />,
       children: [
         {
           path: "/admin/",
-          element: <Admin/>,
+          children: [{ path: "/admin/:id", element: <Admin /> }],
         },
         {
           path: "/admin/users",
-          element: <Users/>,
+          element: <Users />,
         },
         {
           path: "/admin/allCourse/",
-          element: <AllCourse/>,
-          children:[{path:"/admin/allCourse/edit/:id",element:<EditNote/>}]
+          element: <AllCourse />,
         },
+        { path: "/admin/allCourse/edit/:id", element: <EditNote /> },
       ],
     },
     { path: "*", element: <Error404 /> },

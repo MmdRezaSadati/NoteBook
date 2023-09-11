@@ -1,0 +1,15 @@
+.User-wrapper img {
+  width: 150px;
+  padding: 0;
+  height: 150px;
+  border-radius: 50%;
+  background: #caa8dd;
+}
+.User-wrapper > a{
+    color: #555;
+    text-align: start;
+    width: 40%;
+}
+.User-wrapper > a:hover{
+    color: #222;
+}

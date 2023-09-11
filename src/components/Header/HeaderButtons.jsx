@@ -33,11 +33,11 @@ const HeaderButtons = () => {
         <i className="bi bi-search"></i>
       </li>
       <li className="w-auto">
-        <Link to={"/addNewNote"} className="pointer w-100 h-100 d-inline-block">Post New Note</Link>
+        <Link to={"/addNewNote"} className="pointer w-100 h-100 d-inline-block">شروع دوره جدید</Link>
       </li>
 
       <li className="w-auto">
-        <Link to={"/admin"} className="pointer w-100 h-100 d-inline-block">Admin</Link>
+        <Link to={"/admin/1"} className="pointer w-100 h-100 d-inline-block">ادمین</Link>
       </li>
       <label className="w-auto togglePlace" id="toggle">
         <i className="bi bi-brightness-high active"></i>

@@ -13,7 +13,7 @@ const AdminPageMenu = () => {
         </li>
       </NavLink>
       <NavLink
-        to={"/admin/"}
+        to={"/admin/1"}
         className={({ isActive }) => (isActive ? "active" : "")}
       >
         <li className="admin">ادمین</li>
