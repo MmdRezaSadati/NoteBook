@@ -1,7 +1,7 @@
 import { Field } from 'formik';
 import React from 'react';
 
-const Textarea = ({ addClass, name, placeholder, type, defaultValue , label }) => {
+const Textarea = ({ addClass, name, placeholder, type , label }) => {
   return (
     <div className={"form-item " + addClass}>
       <label htmlFor={name}>{label}</label>
@@ -10,7 +10,6 @@ const Textarea = ({ addClass, name, placeholder, type, defaultValue , label }) =
         placeholder={placeholder}
         id={name} 
         as={type}
-        defaultValue={defaultValue}
       />
     </div>
   )

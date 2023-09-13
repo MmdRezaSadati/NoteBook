@@ -97,6 +97,7 @@ const Admin = () => {
         TwitterLink: usersData.TwitterLink,
         FaceBookLink: usersData.FaceBookLink,
       }}
+      enableReinitialize={true}
       onSubmit={(values) => submitForm(values)}
     >
       <Form className="row Admin">
@@ -149,7 +150,6 @@ const Admin = () => {
             name={"UserName"}
             placeholder={"نام کاربری خود را وارد کنید ..."}
             type={"textarea"}
-            defaultValue={usersData.UserName}
             label={"نام کاربری"}
           />
           <Textarea
@@ -157,7 +157,6 @@ const Admin = () => {
             name={"UserBio"}
             placeholder={" بیوگرافی کوتاهی از خود وارد کنید ..."}
             type={"textarea"}
-            defaultValue={usersData.UserBio}
             label={"بیوگرافی"}
           />
           <Textarea
@@ -165,7 +164,6 @@ const Admin = () => {
             name={"instagramLink"}
             placeholder={"لینک اینستاگرام خود را وارد کنید ..."}
             type={"textarea"}
-            defaultValue={usersData.instagramLink}
             label={"لینک اینستاگرام"}
           />
           <Textarea
@@ -173,7 +171,6 @@ const Admin = () => {
             name={"TwitterLink"}
             placeholder={"لینک توئیتر خود را وارد کنید ..."}
             type={"textarea"}
-            defaultValue={usersData.TwitterLink}
             label={"لینک توئیتر"}
           />
           <Textarea
@@ -181,7 +178,6 @@ const Admin = () => {
             name={"FaceBookLink"}
             placeholder={"لینک فیسبوک خود را وارد کنید ..."}
             type={"textarea"}
-            defaultValue={usersData.FaceBookLink}
             label={"لینک فیسبوک"}
           />
         </div>

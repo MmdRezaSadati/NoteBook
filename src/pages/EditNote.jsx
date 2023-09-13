@@ -103,6 +103,7 @@ const EditNote = () => {
         PostImage: postData.TwitterLink,
         PostCategory: postData.FaceBookLink,
       }}
+      enableReinitialize={true}
       onSubmit={(values) => submitForm(values)}
     >
       <Form className="row Admin edit-course">
@@ -155,7 +156,6 @@ const EditNote = () => {
             name={"PostName"}
             placeholder={"نام دوره"}
             type={"textarea"}
-            defaultValue={postData.PostName}
             label={"توضیحات دوره :"}
           />
           <Textarea
@@ -163,7 +163,6 @@ const EditNote = () => {
             name={"coursePrice"}
             placeholder={"قیمت دوره"}
             type={"textarea"}
-            defaultValue={postData.coursePrice}
             label={"قیمت دوره :"}
           />
           <Textarea
@@ -171,7 +170,6 @@ const EditNote = () => {
             name={"PostDescription"}
             placeholder={"توضیحات دوره"}
             type={"textarea"}
-            defaultValue={postData.PostDescription}
             label={"توضیحات دوره :"}
           />
           <Textarea
@@ -179,7 +177,6 @@ const EditNote = () => {
             name={"startCourse"}
             placeholder={"زمان شروع دوره "}
             type={"textarea"}
-            defaultValue={postData.startCourse}
             label={"زمان شروع دوره : YYYY,MM,DD"}
           />
           <Textarea
@@ -187,7 +184,6 @@ const EditNote = () => {
             name={"PostCategory"}
             placeholder={"دسته بندی "}
             type={"textarea"}
-            defaultValue={postData.PostCategory}
             label={" دسته بندی دوره را وارد کنید ..."}
           />
         </div>
